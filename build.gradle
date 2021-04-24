@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group 'me.yura'
+version '1.0'
+
+compileJava.options.encoding = "UTF-8"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+jar {
+    manifest {
+        attributes(
+                "Main-Class": "me.yura.PasswordGenerator")
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
